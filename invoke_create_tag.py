@@ -1,6 +1,8 @@
 from datetime import datetime
 import boto3
 import json
+new_tagkey = tagkey
+new_tagvalue = tagvalue
 
 
 with open('serverlists.txt', 'r') as file:
