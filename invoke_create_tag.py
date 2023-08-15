@@ -6,9 +6,9 @@ import os
 def mainFunction():
     inputtagkey = os.environ['tagkey']
     inputtagvalue = os.environ['tagvalue']
-    # inputsecretid = os.environ['Pod Exception']
-    # inputsecretkey = os.environ['Pod Exception']
-    print(f"'{inputtagkey}' and '{inputtagvalue}'")
+    inputsecretid = os.environ['AWS_ACCESS_KEY_ID']
+    inputsecretkey = os.environ['AWS_SECRET_ACCESS_KEY']
+    print(f"'{inputtagkey}' and '{inputtagvalue}' and '{inputsecretid}' and '{inputsecretkey}'")
 
 with open('serverlists.txt', 'r') as file:
     servernames = [line.strip() for line in file]
