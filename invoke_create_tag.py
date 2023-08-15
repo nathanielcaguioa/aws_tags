@@ -48,7 +48,7 @@ for instance_name in servernames:
     aws_region  = region_lookup[instance_name[:4]]
     print(f"'{aws_region}'")
     
-    def create_session(api_keys, target_env, aws_region):
+    def create_session(inputsecretid, inputsecretkey, aws_region):
         return boto3.Session(
             aws_access_key_id=inputsecretid,
             aws_secret_access_key=inputsecretkey,
@@ -56,7 +56,7 @@ for instance_name in servernames:
         )
 
 
-    session = create_session(api_keys, target_env, aws_region)
+    session = create_session(inputsecretid, inputsecretkey, aws_region)
     ec2_client = session.client('ec2')
 
     instance_id = get_instance_id_by_name(instance_name)
