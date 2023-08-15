@@ -49,8 +49,9 @@ for instance_name in servernames:
     instance_id = get_instance_id_by_name(instance_name)
     if instance_id:
         print(f"Instance ID for '{instance_name}' is: {instance_id}")
+        create_new_tags(instance_id, inputtagkey, inputtagvalue)
     else:
         print(f"No instance found with the name '{instance_name}'")
 
-    create_new_tags(instance_id, inputtagkey, inputtagvalue)
+    
 
