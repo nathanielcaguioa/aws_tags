@@ -31,7 +31,7 @@ def create_new_tags(instance_id, inputtagkey, inputtagvalue):
 
         
 for instance_name in servernames:
-
+    instance_name = instance_name.upper()
     region_lookup = {
         "USEA":"us-east-1",
         "USWE":"us-west-2",
