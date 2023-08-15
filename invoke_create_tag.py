@@ -1,6 +1,7 @@
 from datetime import datetime
 import boto3
 import json
+import os
 
 def mainFunction():
     inputtagkey = os.environ['tagkey']
