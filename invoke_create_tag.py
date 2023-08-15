@@ -6,9 +6,7 @@ import os
 def mainFunction():
     inputtagkey = os.environ['tagkey']
     inputtagvalue = os.environ['tagvalue']
-    inputsecretid = os.environ['AWS_ACCESS_KEY_ID']
-    inputsecretkey = os.environ['AWS_SECRET_ACCESS_KEY']
-    print(f"'{inputtagkey}' and '{inputtagvalue}' and '{inputsecretid}' and '{inputsecretkey}'")
+    print(f"'{inputtagkey}' and '{inputtagvalue}'")
 
 with open('serverlists.txt', 'r') as file:
     servernames = [line.strip() for line in file]
@@ -29,8 +27,8 @@ def get_instance_id_by_name(instance_name):
     else:
             return None
 
-def create_new_tags(instance_id, new_tagkey, new_tagvalue):
-    ec2_client.create_tags(Resources=[instance_id], Tags=[{'Key': new_tagkey, 'Value': new_tagvalue}])
+def create_new_tags(instance_id, inputtagkey, inputtagvalue):
+    ec2_client.create_tags(Resources=[instance_id], Tags=[{'Key': inputtagkey, 'Value': inputtagvalue}])
     print("Tags added successfully.")
 
         
@@ -56,6 +54,6 @@ for instance_name in servernames:
     else:
         print(f"No instance found with the name '{instance_name}'")
 
-    create_new_tags(instance_id, new_tagkey, new_tagvalue)
+    create_new_tags(instance_id, inputtagkey, inputtagvalue)
 
 mainFunction()
