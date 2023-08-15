@@ -1,9 +1,13 @@
 from datetime import datetime
 import boto3
 import json
-new_tagkey = tagkey
-new_tagvalue = tagvalue
 
+def mainFunction():
+inputtagkey = os.environ['tagkey']
+inputtagvalue = os.environ['tagvalue']
+# inputsecretid = os.environ['Pod Exception']
+# inputsecretkey = os.environ['Pod Exception']
+print(f"'{inputtagkey}' and '{inputtagvalue}'")
 
 with open('serverlists.txt', 'r') as file:
     servernames = [line.strip() for line in file]
@@ -45,8 +49,8 @@ for instance_name in servernames:
 
     def create_session(api_keys, target_env, aws_region):
         return boto3.Session(
-            aws_access_key_id=api_keys[target_env]['key'],
-            aws_secret_access_key=api_keys[target_env]['secret'],
+            aws_access_key_id=aws_keyid,
+            aws_secret_access_key=aws_secretkey,
             region_name=aws_region
         )
 
@@ -62,3 +66,4 @@ for instance_name in servernames:
 
     create_new_tags(instance_id, new_tagkey, new_tagvalue)
 
+mainFunction()
