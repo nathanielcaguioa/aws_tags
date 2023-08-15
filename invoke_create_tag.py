@@ -2,11 +2,9 @@ from datetime import datetime
 import boto3
 import json
 import os
-
-def mainFunction():
-    inputtagkey = os.environ['tagkey']
-    inputtagvalue = os.environ['tagvalue']
-    print(f"'{inputtagkey}' and '{inputtagvalue}'")
+inputtagkey = os.environ['tagkey']
+inputtagvalue = os.environ['tagvalue']
+print(f"'{inputtagkey}' and '{inputtagvalue}'")
 
 with open('serverlists.txt', 'r') as file:
     servernames = [line.strip() for line in file]
@@ -56,4 +54,3 @@ for instance_name in servernames:
 
     create_new_tags(instance_id, inputtagkey, inputtagvalue)
 
-mainFunction()
