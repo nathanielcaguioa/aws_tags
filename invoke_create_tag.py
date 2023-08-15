@@ -3,11 +3,11 @@ import boto3
 import json
 
 def mainFunction():
-inputtagkey = os.environ['tagkey']
-inputtagvalue = os.environ['tagvalue']
-# inputsecretid = os.environ['Pod Exception']
-# inputsecretkey = os.environ['Pod Exception']
-print(f"'{inputtagkey}' and '{inputtagvalue}'")
+    inputtagkey = os.environ['tagkey']
+    inputtagvalue = os.environ['tagvalue']
+    # inputsecretid = os.environ['Pod Exception']
+    # inputsecretkey = os.environ['Pod Exception']
+    print(f"'{inputtagkey}' and '{inputtagvalue}'")
 
 with open('serverlists.txt', 'r') as file:
     servernames = [line.strip() for line in file]
