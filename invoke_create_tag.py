@@ -33,7 +33,7 @@ def create_new_tags(instance_id, inputtagkey, inputtagvalue):
     print("Tags added successfully.")
 
     
-ec2_client = boto3.client('ec2',region_name=aws_region)
+ec2_client = boto3.client('ec2',region_name=inputregion)
 instance_id = get_instance_id_by_name(inputservername)
 
 if instance_id:
