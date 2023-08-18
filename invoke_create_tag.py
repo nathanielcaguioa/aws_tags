@@ -4,10 +4,10 @@ import json
 import os
 inputtagkey = os.environ['tagkey']
 inputtagvalue = os.environ['tagvalue']
-inputservername = os.environ['server']
+inputservername = os.environ['servername']
 inputregion = os.environ['awsRegion']
 
-print(f"'{inputtagkey}' and '{inputtagvalue}'")
+print(f"'{servername}' and '{awsRegion}'")
 
     
 def get_instance_id_by_name(inputservername):
