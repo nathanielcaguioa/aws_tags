@@ -9,7 +9,7 @@ inputtagvalue = os.environ['tagvalue']
 inputservername = sys.argv[1]
 inputregion = sys.argv[2]
 
-print(f"'{servername}' and '{awsRegion}'")
+print(f"'{inputservername}' and '{inputregion}'")
 
     
 def get_instance_id_by_name(inputservername):
