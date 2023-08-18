@@ -2,10 +2,11 @@ from datetime import datetime
 import boto3
 import json
 import os
+
 inputtagkey = os.environ['tagkey']
 inputtagvalue = os.environ['tagvalue']
-inputservername = os.environ['servername']
 inputregion = os.environ['awsRegion']
+inputservername = os.environ['servername']
 
 print(f"'{servername}' and '{awsRegion}'")
 
